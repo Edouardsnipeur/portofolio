@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processus de Paiement</title>
+</head>
+<body>
+
+<!-- Bouton de paiement -->
+<!-- <button onclick="startPayment()">Payer</button> -->
+<paygate-widget
+    amount="10"
+    buttontext="Payer le livre"
+    commerceId="0001"
+    apikey="6c5e3c15-4775-4933-98f3-f2dcc275e775"
+    callback="successPay()"
+>
+
+<script src="http://localhost:8000/sdk/sdk.js"></script>
+<script>
+    window.addSuccessListener(data => {
+        console.log('Événement PAYMENT_SUCCESS capturé avec le message:', data);
+    });
+</script>
+</body>
+</html>
